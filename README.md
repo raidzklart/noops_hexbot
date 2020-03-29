@@ -26,7 +26,7 @@ require 'noops_hexbot'
 # Set up a client
 client = NoopsHexbot::Client.new
 
-#Call methods on the client, there are only 3 methods:
+# Call methods on the client, there are only 3 methods:
 client.colour # Returns a single hexcode
 client.colours(3) # Returns an array of hexcodes (Max 1000)
 client.colours_with_seeds(10, ["FFFFFF", "000000"]) # Returns an array of hexcodes. Hexcodes should not have the #. Hexcodes will be a mix of a random combination of two of the seeds. Invalid hexcode will return an error.
