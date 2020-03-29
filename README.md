@@ -23,6 +23,8 @@ Or install it yourself as:
 ## Examples
 
 ```ruby
+# Require the gem
+require 'noops_hexbot'
 # Set up a client
 client = NoopsHexbot::Client.new
 
