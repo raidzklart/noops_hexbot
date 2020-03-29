@@ -20,9 +20,18 @@ Or install it yourself as:
 
     $ gem install noops_hexbot
 
-## Usage
+## Examples
 
-TODO: Write usage instructions here
+```ruby
+# Set up a client
+client = NoopsHexbot::Client.new
+
+#Call methods on the client, there are only 3 methods:
+client.colour # Returns a single hexcode
+client.colours(3) # Returns an array of hexcodes (Max 1000)
+client.colours_with_seeds(10, ["FFFFFF", "000000"]) # Returns an array of hexcodes. Hexcodes should not have the #. Hexcodes will be a mix of a random combination of two of the seeds. Invalid hexcode will return an error.
+# All of these methods can also be called by replacing the colour with color.
+```
 
 ## Development
 
@@ -32,4 +41,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/noops_hexbot.
+Bug reports and pull requests are welcome on GitHub at https://github.com/raidzklart/noops_hexbot.
