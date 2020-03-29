@@ -10,7 +10,7 @@ module NoopsHexbot
     end
 
     def colour
-      parse_response(HTTParty.get "#{@base_uri}/hexbot").first
+      parse_response(HTTParty.get "#{@base_uri}/hexbot").first["value"]
     end
 
     def color
@@ -19,7 +19,9 @@ module NoopsHexbot
 
     def colours(count)
       check_count(count)
-      parse_response(HTTParty.get "#{@base_uri}/hexbot?count=#{count}").each { |i| i["value"] }
+      colours = []
+      parse_response(HTTParty.get "#{@base_uri}/hexbot?count=#{count}").each { |i| colours <<i["value"] }
+      colours
     end
 
     def colors(count)
@@ -28,7 +30,9 @@ module NoopsHexbot
 
     def colours_with_seeds(count, seeds)
       check_count(count)
-      parse_response(HTTParty.get "#{@base_uri}/hexbot?count=#{count}&seed=#{seeds.join(',')}").each { |i| i["value"] }
+      colours = []
+      parse_response(HTTParty.get "#{@base_uri}/hexbot?count=#{count}&seed=#{seeds.join(',')}").each { |i| colours << i["value"] }
+      colours
     end
 
     def colors_with_seeds(count, seeds)
