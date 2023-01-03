@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "minitest", "~> 5.0"
 
-  spec.add_dependency "httparty", "~> 0.13.7"
+  spec.add_dependency "httparty", ">= 0.13.7", "< 0.22.0"
 end
